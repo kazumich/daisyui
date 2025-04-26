@@ -1,0 +1,21 @@
+@extends("/_layouts/one-column.html")
+
+@section("topic-path")
+<div class="w-full overflow-x-auto mb-4 not-prose">
+  <div class="breadcrumbs text-sm whitespace-nowrap">
+    <ol class="inline-flex space-x-2 p-0">
+      <li><a href="%{HOME_URL}">HOME</a></li>
+      <li><a href="%{HOME_URL}contact/">お問い合わせ</a></li>
+    </ol>
+  </div>
+</div>
+@endsection
+
+@section("main")
+<div class="max-w-xl mx-auto prose">
+
+  <h1 class="mb-3">お問い合わせフォーム</h1>
+  @include("/contact/form/main.html")
+
+</div>
+@endsection

@@ -1,0 +1,108 @@
+@extends("/_layouts/one-column.html")
+
+@section("topic-path")
+@endsection
+
+@section("main")
+
+<h2 class="text-3xl font-extrabold">Sample Summary2</h2>
+
+<ul class="menu menu-horizontal pb-5 px-0">
+  <li><a href="summary1.html">1</a></li>
+  <li><a href="summary2.html">2</a></li>
+  <li><a href="summary3.html">3</a></li>
+  <li><a href="summary4.html">4</a></li>
+  <li><a href="summary5.html">5</a></li>
+  <li><a href="summary6.html">6</a></li>
+</ul>
+
+        <section class="py-8 relative">
+          <div class="w-screen relative left-1/2 -translate-x-1/2 flex">
+            <div class="w-2/3 bg-primary/10 h-100 py-10 flex items-center shadow-md">
+              <div class="absolute left-1/2 -translate-x-1/2 w-screen flex justify-end">
+                <div class="w-1/2 ">
+                  <div class="w-full h-80 overflow-hidden shadow-md">
+                    <!-- GET_Rendered id="photo1" -->
+                  </div>
+                </div>
+              </div>
+              <div class="absolute left-1/2 -translate-x-1/2 w-screen">
+                <div class="container mx-auto max-w-4xl">
+                  <div class="w-1/2">
+                    <!-- GET_Rendered id="contents1" -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-1/3 py-6"></div>
+          </div>
+        </section>
+        
+          <section class="py-8 relative">
+            <div class="w-screen relative left-1/2 -translate-x-1/2 flex">
+              <div class="w-1/3 py-6"></div>
+              <div class="w-2/3 bg-primary/10 h-96 py-8 flex items-center shadow-md">
+                <div class="absolute left-1/2 -translate-x-1/2 w-screen flex justify-start">
+                  <div class="w-1/2">
+                    <div class="w-full h-80 overflow-hidden shadow-md">
+                      <!-- GET_Rendered id="photo2" -->
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute left-1/2 -translate-x-1/2 w-screen">
+                  <div class="container mx-auto max-w-4xl">
+                    <div class="w-1/2 ml-auto">
+                      <!-- GET_Rendered id="contents2" -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+   
+            <section class="py-8 relative">
+              <div class="w-screen relative left-1/2 -translate-x-1/2 flex">
+                <div class="w-2/3 bg-primary/10 h-100 py-10 flex items-center shadow-md">
+                  <div class="absolute left-1/2 -translate-x-1/2 w-screen flex justify-end">
+                    <div class="w-1/2 ">
+                      <div class="w-full h-80 overflow-hidden shadow-md">
+                        <!-- GET_Rendered id="photo3" -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute left-1/2 -translate-x-1/2 w-screen">
+                    <div class="container mx-auto max-w-4xl">
+                      <div class="w-1/2">
+                        <!-- GET_Rendered id="contents3" -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-1/3 py-6"></div>
+              </div>
+            </section>
+
+
+<!-- BEGIN_MODULE Entry_Summary id="summary_index" -->
+<!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
+<!-- BEGIN_SetRendered id="photo{iNum}" -->
+  <!-- BEGIN_IF [{path}/nem] -->
+  <img class="w-full h-full object-cover object-center" src="%{ROOT_DIR}{path}[resizeImg({x}, {y})]" alt="{title}">
+  <!-- ELSE --><!-- BEGIN noimage -->
+  <img class="w-full h-full object-cover object-center" src="/images/noimage.png" alt=""><!-- END noimage -->
+  <!-- END_IF -->
+<!-- END_SetRendered -->
+<!-- BEGIN_SetRendered id="contents{iNum}" -->
+<div class="hoge px-4">
+  <p class="text-2xl md:text-3xl font-extrabold text-primary pb-2">0{iNum}</p>
+  <h2 class="text-xl md:text-2xl font-bold mb-4">{title}</h2>
+  <p class="text-sm md:text-base">
+    {summary}</p>
+  <a href="{url}" class="btn btn-primary text-white mb-3 mt-4">詳細を見る</a>
+</div>
+<!-- END_SetRendered -->
+<!-- END entry:loop -->
+<!-- END unit:loop -->
+<!-- END_MODULE Entry_Summary -->
+
+@endsection

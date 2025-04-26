@@ -1,0 +1,28 @@
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+  <!-- 最新記事 -->
+  <div>
+    @include("/admin/module/setting.html")
+    <h2 class="text-xl font-bold mb-4">最新記事</h2>
+    <ul class="space-y-4">
+      <!-- BEGIN unit:loop -->
+      <!-- BEGIN entry:loop -->
+      <li><a href="{url}" class="flex gap-4 items-center hover:opacity-80">
+        <!-- BEGIN_IF [{path}/nem] -->
+        <img src="%{ROOT_DIR}{path}[resizeImg({x}, {y})]" alt="{alt}" class="w-16 h-16 object-cover rounded unit-id-{utid}" width="{x}" height="{y}"
+        >
+        <!-- ELSE -->
+        <!-- BEGIN noimage -->
+        <img src="/images/default/noimage.gif" alt="" class="w-16 h-16 object-cover rounded" width="{noImgX}" height="{noImgY}"
+        >
+        <!-- END noimage -->
+        <!-- END_IF -->
+        <div>
+          <p class="text-xs text-gray-500">{date#Y}年{date#m}月{date#d}日<!-- BEGIN new --> <span class="badge badge-primary badge-xs ml-1">NEW</span><!-- END new --></p>
+          <p class="hover:underline line-clamp-2">{title}</p>
+        </div>
+      </a></li>
+      <!-- END entry:loop -->
+      <!-- END unit:loop -->
+    </ul>
+  </div>
+ <!-- END_MODULE Entry_Summary -->

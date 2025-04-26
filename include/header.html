@@ -1,0 +1,83 @@
+  <header class="bg-base-100 shadow-sm">
+    <div class="navbar container mx-auto max-w-4xl px-4">
+      
+      <!-- 左側: TITLE -->
+      <div class="navbar-start">
+        <a href="%{HOME_URL}" class="text-xl font-bold hover:text-primary">daisyUI theme</a>
+      </div>
+  
+      <!-- 右側 -->
+      <div class="navbar-end flex items-center gap-2">
+        <div class="drawer drawer-end lg:hidden">
+          <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content flex justify-end">
+
+            <button onclick="toggleTheme()" class="btn btn-ghost btn-circle">
+              <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                   viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                
+                  d="M12 3v2.25M12 18.75V21M5.636 5.636 7.227 7.227M16.773 16.773l1.591 1.591M3 12h2.25M18.75 12H21M5.636 18.364l1.591-1.591M16.773 7.227l1.591-1.591M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+              </svg>
+            </button> 
+
+            <label for="my-drawer" class="btn btn-ghost btn-circle inline-flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                style="stroke-width:1.5; display:inline-block; vertical-align:middle;">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </label>
+
+          </div>
+  
+
+<div class="drawer-side z-[100]">
+  <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+  <div class="bg-base-200 min-h-full w-72 px-4 pt-3">
+    
+    <div class="flex justify-end">
+      <label for="my-drawer" class="btn btn-circle btn-ghost inline-flex">
+        ✕
+      </label>
+    </div>
+    <ul class="menu bg-base-200 text-base-content min-h-full w-full p-6 text-lg">
+<!-- BEGIN_MODULE Navigation id="global_navi_sp" -->
+@include("/admin/module/setting.html")
+<!-- BEGIN navigation:loop --><li>
+	<!-- BEGIN link#front --><a href="{url}" class="btn w-full mb-3 {attr}"><!-- END link#front -->
+	<!-- BEGIN label:veil -->{label}[raw]<!-- END label:veil -->
+	<!-- BEGIN link#rear --></a><!-- END link#rear --></li>
+	<!-- END navigation:loop -->
+<!-- END_MODULE Navigation -->
+    </ul>
+  </div>
+</div>
+        </div>
+  
+        <ul class="menu menu-horizontal hidden lg:flex items-center gap-2">
+          <li>
+            <button onclick="toggleTheme()" class="btn btn-ghost btn-circle">
+              <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                   viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 3v2.25M12 18.75V21M5.636 5.636 7.227 7.227M16.773 16.773l1.591 1.591M3 12h2.25M18.75 12H21M5.636 18.364l1.591-1.591M16.773 7.227l1.591-1.591M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+              </svg>
+            </button> 
+          </li>
+<!-- BEGIN_MODULE Navigation id="global_navi" -->
+@include("/admin/module/setting.html")
+<!-- BEGIN navigation:loop --><li>
+	<!-- BEGIN link#front --><a href="{url}" class="{attr}"><!-- END link#front -->
+	<!-- BEGIN label:veil -->{label}[raw]<!-- END label:veil -->
+	<!-- BEGIN link#rear --></a><!-- END link#rear --></li>
+	<!-- END navigation:loop -->
+<!-- END_MODULE Navigation -->
+        </ul>
+  
+      </div>
+    </div>
+  </header>
+
+

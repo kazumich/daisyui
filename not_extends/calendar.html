@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  @include("/include/head/meta.html")
+  @include("/include/head/link.html")
+  @include("/include/head/js.html")
+
+</head>
+<body>
+  @include("/include/header.html")
+  
+  <main class="container mx-auto max-w-4xl px-4 py-8">
+
+    @include("/admin/action.html")
+
+    <div class="w-full overflow-x-auto mb-4 not-prose">
+      <div class="breadcrumbs text-sm whitespace-nowrap">
+        <ol class="inline-flex space-x-2 p-0">
+          <li><a href="%{HOME_URL}">HOME</a></li>
+          <!-- BEGIN_IF [%{DATE_YEAR}/nem] -->
+          <li><a href="%{HOME_URL}">%{DATE_YEAR}年</a></li>
+          <!-- ELSE -->
+          <li><a href="%{HOME_URL}">%{Y}年</a></li>
+           <!-- END_IF -->
+        </ol>
+      </div>
+    </div>
+
+    @include("/include/entry/calYear.html")
+
+  </main>
+
+  @include("/include/footer.html")
+  
+</body>
+</html>
+
+
+
+

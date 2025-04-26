@@ -1,0 +1,161 @@
+@extends("/_layouts/one-column.html")
+
+@section("topic-path")
+@endsection
+
+@section("main")
+
+      <h2 class="text-3xl font-extrabold">Sample Summary5</h2>
+
+      <ul class="menu menu-horizontal pb-5 px-0">
+        <li><a href="summary1.html">1</a></li>
+        <li><a href="summary2.html">2</a></li>
+        <li><a href="summary3.html">3</a></li>
+        <li><a href="summary4.html">4</a></li>
+        <li><a href="summary5.html">5</a></li>
+        <li><a href="summary6.html">6</a></li>
+      </ul>
+
+
+      <section class="max-w-4xl mx-auto overflow-x-auto pr-[10%]">
+        <div class="relative" role="region" aria-roledescription="carousel" aria-label="ニュースカルーセル">
+          <div class="flex flex-nowrap">
+<!-- BEGIN_MODULE Entry_Summary id="summary_index" -->
+<!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
+            <article role="group" aria-roledescription="slide" class="flex-none w-[280px] pr-6">
+              <a href="#" class="block mb-5 sm:mb-6 focus:outline-none">
+                <figure>
+                  <div class="w-full overflow-hidden">
+                    <!-- BEGIN_IF [{path}/nem] -->
+      <img src="%{ROOT_DIR}{path}[resizeImg({x}, {y})]" alt="{alt}" class="aspect-video size-full rounded-image object-cover" width="{x}" height="{y}">
+      <!-- ELSE --><!-- BEGIN noimage -->
+      <img src="/images/noimage.png" alt="" class="aspect-video size-full rounded-image object-cover" width="{noImgX}" height="{noImgY}"><!-- END noimage -->
+      <!-- END_IF -->
+                  </div>
+                  <figcaption class="py-3">
+                    <div class="flex items-center justify-between mb-1">
+                      <p class="text-sm">{date#Y}年{date#m}月{date#d}日</p>
+                      <!-- BEGIN categoryField --><p class="text-sm font-semibold max-w-[50%] truncate text-right" title="{fieldCategoryName}">
+                       {fieldCategoryName}
+                      </p><!-- END categoryField -->
+                    </div>
+                    <h5 class="text-xl font-bold line-clamp-2">
+                      {title}
+                    </h5>
+                    <p class="text-sm pt-2 line-clamp-3">
+                      {summary}
+                    </p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+<!-- END entry:loop -->
+<!-- END unit:loop -->
+<!-- END_MODULE Entry_Summary -->
+
+
+
+            <article role="group" aria-roledescription="slide" class="flex-none w-[280px] pr-6">
+              <a href="#" class="block mb-5 sm:mb-6 focus:outline-none">
+                <figure>
+                  <div class="w-full overflow-hidden">
+                    <img src="../images/yoko2.jpg" 
+                         alt="記事のプレビュー画像" 
+                         class="aspect-video size-full rounded-image object-cover" />
+                  </div>
+                  <figcaption class="py-3">
+                    <div class="flex items-center justify-between mb-1">
+                      <p class="text-sm">2025年3月30日</p>
+                      <p class="text-sm font-semibold max-w-[50%] truncate text-right" title="とても長いカテゴリー名がここに入る場合でも省略されます">
+                        とても長いカテゴリー名がここに入る場合でも省略されます
+                      </p>
+                    </div>
+                    <h5 class="text-xl font-bold line-clamp-2">
+                      記事のタイトルが、とても長い時にはどうなる？ ここでは2行まで
+                    </h5>
+                    <p class="text-sm pt-2 line-clamp-3">
+                      概要文は何文字表示されるかのテストです。概要文は何文字表示されるかのテストです。概要文は何文字表示されるかのテストです。
+                    </p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+            <article role="group" aria-roledescription="slide" class="flex-none w-[280px] pr-6">
+              <a href="#" class="block mb-5 sm:mb-6 focus:outline-none">
+                <figure>
+                  <div class="w-full overflow-hidden">
+                    <img src="../images/yoko3.jpg" 
+                         alt="記事のプレビュー画像" 
+                         class="aspect-video size-full rounded-image object-cover" />
+                  </div>
+                  <figcaption class="py-3">
+                    <div class="flex items-center justify-between mb-1">
+                      <p class="text-sm">2025年3月30日</p>
+                      <p class="text-sm font-semibold max-w-[50%] truncate text-right" title="とても長いカテゴリー名がここに入る場合でも省略されます">
+                        とても長いカテゴリー名がここに入る場合でも省略されます
+                      </p>
+                    </div>
+                    <h5 class="text-xl font-bold line-clamp-2">
+                      記事のタイトルが、とても長い時にはどうなる？ ここでは2行まで
+                    </h5>
+                    <p class="text-sm pt-2 line-clamp-3">
+                      概要文は何文字表示されるかのテストです。概要文は何文字表示されるかのテストです。概要文は何文字表示されるかのテストです。
+                    </p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+            <article role="group" aria-roledescription="slide" class="flex-none w-[280px] pr-6">
+              <a href="#" class="block mb-5 sm:mb-6 focus:outline-none">
+                <figure>
+                  <div class="w-full overflow-hidden">
+                    <img src="../images/tate1.jpg" 
+                         alt="記事のプレビュー画像" 
+                         class="aspect-video size-full rounded-image object-cover" />
+                  </div>
+                  <figcaption class="py-3">
+                    <div class="flex items-center justify-between mb-1">
+                      <p class="text-sm">2025年3月30日</p>
+                      <p class="text-sm font-semibold max-w-[50%] truncate text-right" title="とても長いカテゴリー名がここに入る場合でも省略されます">
+                        とても長いカテゴリー名がここに入る場合でも省略されます
+                      </p>
+                    </div>
+                    <h5 class="text-xl font-bold line-clamp-2">
+                      記事のタイトルが、とても長い時にはどうなる？ ここでは2行まで
+                    </h5>
+                    <p class="text-sm pt-2 line-clamp-3">
+                      概要文は何文字表示されるかのテストです。概要文は何文字表示されるかのテストです。概要文は何文字表示されるかのテストです。
+                    </p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+            <article role="group" aria-roledescription="slide" class="flex-none w-[280px] pr-6">
+              <a href="#" class="block mb-5 sm:mb-6 focus:outline-none">
+                <figure>
+                  <div class="w-full overflow-hidden">
+                    <img src="../images/yoko4.jpg" 
+                         alt="記事のプレビュー画像" 
+                         class="aspect-video size-full rounded-image object-cover" />
+                  </div>
+                  <figcaption class="py-3">
+                    <div class="flex items-center justify-between mb-1">
+                      <p class="text-sm">2025年3月30日</p>
+                      <p class="text-sm font-semibold max-w-[50%] truncate text-right" title="とても長いカテゴリー名がここに入る場合でも省略されます">
+                        とても長いカテゴリー名がここに入る場合でも省略されます
+                      </p>
+                    </div>
+                    <h5 class="text-xl font-bold line-clamp-2">
+                      記事のタイトルが、とても長い時にはどうなる？ ここでは2行まで
+                    </h5>
+                    <p class="text-sm pt-2 line-clamp-3">
+                      概要文は何文字表示されるかのテストです。概要文は何文字表示されるかのテストです。概要文は何文字表示されるかのテストです。
+                    </p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+@endsection

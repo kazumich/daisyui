@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entry | daisyUI blog theme</title>
+    <link rel="stylesheet" href="../src/style.css" />
+    <script src="../js/dark-mode.js" charset="UTF-8" defer></script>
+  </head>
+  <body>
+    <!-- Start of include : header.html -->
+    <header class="bg-base-100 shadow-sm">
+      <div class="navbar container mx-auto max-w-4xl px-4">
+        <div class="navbar-start">
+          <a href="index.html" class="text-xl font-bold hover:text-primary">daisyUI Blog Theme</a>
+        </div>
+        <div class="navbar-end flex items-center gap-2">
+          <div class="drawer drawer-end lg:hidden">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content flex justify-end">
+              <button onclick="toggleTheme()" class="btn btn-ghost btn-circle">
+                <svg id="theme-icon-desktop" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25M12 18.75V21M5.636 5.636 7.227 7.227M16.773 16.773l1.591 1.591M3 12h2.25M18.75 12H21M5.636 18.364l1.591-1.591M16.773 7.227l1.591-1.591M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+              </button>
+              <label for="my-drawer" class="btn btn-ghost btn-circle inline-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="stroke-width: 1.5; display: inline-block; vertical-align: middle;">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </label>
+            </div>
+            <div class="drawer-side z-[100]">
+              <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+              <div class="bg-base-200 min-h-full w-72 px-4 pt-3">
+                <div class="flex justify-end">
+                  <label for="my-drawer" class="btn btn-circle btn-ghost">✕</label>
+                </div>
+                <ul class="menu bg-base-200 text-base-content min-h-full w-full p-6 text-lg">
+
+                  <!-- <li><a href="index.html" class="btn w-full mb-3">Home</a></li> -->
+                  <li><a href="list.html" class="btn w-full mb-3">Index</a></li>
+                  <li><a href="entry.html" class="btn w-full mb-3">Entry</a></li>
+                  <li>
+                    <a href="calendar.html" class="btn w-full mb-3">Calendar</a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="btn btn-primary text-white w-full mb-3">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <ul class="menu menu-horizontal hidden lg:flex items-center gap-2">
+            <li>
+              <button onclick="toggleTheme()" class="btn btn-ghost btn-circle">
+                <svg id="theme-icon-mobile" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25M12 18.75V21M5.636 5.636 7.227 7.227M16.773 16.773l1.591 1.591M3 12h2.25M18.75 12H21M5.636 18.364l1.591-1.591M16.773 7.227l1.591-1.591M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+              </button>
+            </li>
+            <!-- <li><a href="index.html">Home</a></li> -->
+            <li><a href="list.html">Index</a></li>
+            <li><a href="entry.html">Entry</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="contact.html" class="btn btn-primary text-white">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- End of include : header.html -->
+
+
+    <main class="container mx-auto max-w-4xl px-4 py-8">
+
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <article class="prose md:col-span-8 max-w-xl mx-auto md:mx-0">
+
+          <div class="w-full overflow-x-auto mb-4 not-prose">
+            <div class="breadcrumbs text-sm whitespace-nowrap">
+              <ol class="inline-flex space-x-2 p-0">
+                <li><a href="index.html" class="no-underline hover:text-primary">HOME</a></li>
+                <li><a href="list.html" class="no-underline hover:text-primary">カテゴリーA</a></li>
+                <li><a href="entry.html" class="no-underline hover:text-primary">Tailwind CSS Typographyを使ったブログコンテンツ</a></li>
+              </ol>
+            </div>
+          </div>
+
+          <header>
+            <h1 class="mb-3">Tailwind CSS Typography を使ったブログコンテンツ</h1>
+            <div class="text-sm flex flex-wrap items-center gap-3 mt-0 mb-8">
+              <span>2025 年 03 月 01 日</span>
+              <span class="badge badge-primary badge-xs">NEW</span>
+              <span><a href="list.html" class="no-underline hover:text-primary">Web デザイン</a></span>
+              <span class="flex gap-3">
+                <a href="list.html" class="no-underline hover:text-primary text-gray-500">#TailwindCSS</a>
+                <a href="list.html" class="no-underline hover:text-primary text-gray-500">#Typography</a>
+                <a href="list.html" class="no-underline hover:text-primary text-gray-500">#ブログ</a>
+              </span>
+            </div>
+          </header>
+
+
+          <p>Tailwind CSS Typography プラグインは、ブログ記事などの長文コンテンツを美しく整えるために最適なツールです。本文テキスト、見出し、リスト、画像などが自動的に調和のとれたスタイルで表示されます。</p>
+
+          <h2>プラグインの導入方法</h2>
+          <p>導入は簡単で、以下のようにnpmでインストールします：</p>
+
+          <pre><code>npm install -D @tailwindcss/typography</code></pre>
+
+          <h2>サンプル画像</h2>
+          <img src="../images/yoko6.jpg" alt="サンプル画像" class="rounded" loading="lazy">
+
+          <h2>主な特徴</h2>
+          <ul>
+            <li>レスポンシブ対応が標準</li>
+            <li>美しいタイポグラフィが簡単に利用可能</li>
+            <li>MarkdownとHTMLの両方で活用できる</li>
+          </ul>
+
+          <img class="max-w-full h-auto rounded" src="../images/yoko5.jpg" width="736" height="412" alt="" loading="lazy">
+
+          <p>これらを活用することで、読みやすさが格段に向上し、訪問者の滞在時間やページ内のエンゲージメントが増加するでしょう。</p>
+
+
+          <section class="mt-12">
+            <h3>関連記事</h3>
+            <p>この記事のハッシュタグ <a href="list.html" class="no-underline hover:text-primary">#ablogcms</a> <a href="list.html" class="no-underline hover:text-primary">#UI</a> <a href="list.html" class="no-underline hover:text-primary">#管理画面</a> から関連する記事を表示しています。</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 not-prose">
+              <div>
+                <a href="entry.html" class="hover:opacity-80">
+                <img src="../images/yoko1.jpg" alt="関連記事" class="object-cover rounded" loading="lazy">
+                <p class="mt-2 line-clamp-2 hover:text-primary">サンプル記事1</p>
+                </a>
+              </div>
+              <div>
+                <a href="entry.html" class="hover:opacity-80">
+                <img src="../images/yoko2.jpg" alt="関連記事" class="object-cover rounded" loading="lazy">
+                <p class="mt-2 line-clamp-2 hover:text-primary">サンプル記事2</p>
+                </a>
+              </div>
+              <div>
+                <a href="entry.html" class="hover:opacity-80">
+                <img src="../images/yoko3.jpg" alt="関連記事" class="object-cover rounded" loading="lazy">
+                <p class="mt-2 line-clamp-2 hover:text-primary">サンプルの記事3のタイトルが長い時の対応をテストする</p>
+                </a>
+              </div>
+            </div>
+
+          </section>
+
+        </article>
+    <!-- サイドバーなどの他のコンテンツ -->
+    <aside class="md:col-span-4 max-w-xl mx-auto space-y-8">
+
+
+  <!-- 検索フォーム -->
+  <div class="form-control">
+    <input type="text" placeholder="検索キーワード" class="input input-bordered" />
+  </div>
+
+  <!-- 最新記事 -->
+  <div>
+    <h2 class="text-xl font-bold mb-4">最新記事</h2>
+    <ul class="space-y-4">
+      <!-- 記事1 -->
+      <li><a href="entry.html" class="flex gap-4 items-center hover:opacity-80">
+        <img src="../images/yoko1.jpg" alt="記事サムネイル" class="w-16 h-16 object-cover rounded" loading="lazy">
+        <div>
+          <p class="text-xs text-gray-500">2025年02月26日 <span class="badge badge-primary badge-xs ml-1">NEW</span></p>
+          <p class="hover:text-primary line-clamp-2">サンプルの記事1</p>
+        </div>
+      </a></li>
+
+      <!-- 記事2 -->
+      <li><a href="entry.html" class="flex gap-4 items-center hover:opacity-80">
+        <img src="../images/yoko2.jpg" alt="記事サムネイル" class="w-16 h-16 object-cover rounded" loading="lazy">
+        <div>
+          <p class="text-xs text-gray-500">2025年02月23日 <span class="badge badge-primary badge-xs ml-1">NEW</span></p>
+          <p class="hover:text-primary line-clamp-2">サンプルの記事2</p>
+        </div>
+      </a></li>
+
+      <!-- 記事3 -->
+      <li><a href="entry.html" class="flex gap-4 items-center hover:opacity-80">
+        <img src="../images/yoko3.jpg" alt="記事サムネイル" class="w-16 h-16 object-cover rounded" loading="lazy">
+        <div>
+          <p class="text-xs text-gray-500">2025年02月20日</p>
+          <p class="hover:text-primary line-clamp-2">サンプルの記事3のタイトルが長い時の対応をテストする</p>
+        </div>
+      </a></li>
+
+      <!-- 記事3 -->
+      <li><a href="entry.html" class="flex gap-4 items-center hover:opacity-80">
+        <img src="../images/yoko4.jpg" alt="記事サムネイル" class="w-16 h-16 object-cover rounded" loading="lazy">
+        <div>
+          <p class="text-xs text-gray-500">2025年02月20日</p>
+          <p class="hover:text-primary line-clamp-2">サンプルの記事4</p>
+        </div>
+      </a></li>
+
+    </ul>
+  </div>
+
+  <!-- アーカイブ -->
+  <div>
+    <h2 class="text-xl font-bold mb-4">アーカイブ</h2>
+    <ul>
+      <li class="flex justify-between border-b border-gray-300 py-2">
+        <a href="list.html" class="hover:text-primary">2025年2月</a>
+        <span class="badge">8</span>
+      </li>
+      <li class="flex justify-between border-b border-gray-300 py-2">
+        <a href="list.html" class="hover:text-primary">2025年1月</a>
+        <span class="badge">2</span>
+      </li>
+      <li class="flex justify-between border-b border-gray-300 py-2">
+        <a href="list.html" class="hover:text-primary">2024年12月</a>
+        <span class="badge">6</span>
+      </li>
+    </ul>
+    <p class="mt-2 text-right text-sm"><a href="calendar.html" class="hover:text-primary">年間カレンダー</a></p>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-4">ハッシュタグ</h2>
+    <div class="flex flex-wrap gap-2">
+      <a href="list.html" class="text-xl hover:text-primary">#a-blog</a>
+      <a href="list.html" class="text-lg hover:text-primary">#ablogcms</a>
+      <a href="list.html" class="text-sm hover:text-primary">#Adobe</a>
+      <a href="list.html" class="text-sm hover:text-primary">#amazon</a>
+      <a href="list.html" class="text-base hover:text-primary">#Apple</a>
+      <a href="list.html" class="text-sm hover:text-primary">#appleple</a>
+      <a href="list.html" class="text-sm hover:text-primary">#Book</a>
+      <a href="list.html" class="text-lg hover:text-primary">#Event</a>
+      <a href="list.html" class="text-sm hover:text-primary">#iPad</a>
+      <a href="list.html" class="text-sm hover:text-primary">#MacBook</a>
+      <a href="list.html" class="text-base hover:text-primary">#セミナー</a>
+      <a href="list.html" class="text-base hover:text-primary">#名古屋</a>
+      <!-- 他のタグも同様に追加 -->
+    </div>
+  </div>
+
+    </aside>
+  </div>
+</main>
+
+
+
+    <!-- Start of include : footer.html -->
+    <footer class="bg-neutral text-neutral-content">
+      <div
+        class="container mx-auto max-w-4xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4"
+      >
+        <aside class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 1000 1000"
+            class="fill-current"
+          >
+            <path
+              fill="#fff"
+              stroke-width="0"
+              d="m500.03,0C223.85,0,0,223.9,0,499.96s223.85,500.04,500.03,500.04,499.97-223.87,499.97-500.04S776.15,0,500.03,0Zm181.14,679.73c-63.89,79.66-147.67,95.34-214.73,91.16-88-5.49-181.72-84.27-185.41-166.56-2.92-64.93,29.85-155.88,153.55-167.68,31.13-2.95,66.43,6.33,72.72,39.85,6.21,33.3-24.98,51.78-42,53.1-58.94,4.56-81.9,35.45-75.33,74.74,6.26,37.69,50,55.43,90.09,56.58,37.7,1.03,97.77-16.18,127.85-61.93,57.5-87.51,26.18-163.59-6.52-200.25-45.93-51.47-109.58-82.18-217.12-32.18-25.54,11.9-51.3,9.98-71.24-6.27-11.46-9.4-19.28-31.17-14.39-49.51,4.19-15.73,12.73-30.7,39.53-45.44,135.98-74.98,266.52-24.15,335.59,51.32,75.94,83.05,111.5,233.4,7.41,363.08Z"
+            />
+          </svg>
+          <p>Copyright © 2025 - All right reserved</p>
+        </aside>
+        <nav class="flex gap-4">
+          <a href="#" aria-label="X (formerly Twitter)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M13.317 10.774 20.361 3h-1.67l-6.117 6.75L7.806 3H2l7.39 10.534L2 21h1.67l6.457-7.123L16.194 21H22M4.914 4.172h2.176L19.085 19.83h-2.176"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="facebook">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.262.82-.577 0-.285-.011-1.04-.016-2.042-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.335-1.757-1.335-1.757-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.604-2.665-.303-5.466-1.335-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.116-3.176 0 0 1.008-.322 3.301 1.23a11.516 11.516 0 0 1 3-.404c1.018.005 2.043.138 3 .404 2.29-1.553 3.296-1.23 3.296-1.23.654 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.805 5.625-5.479 5.921.43.37.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .319.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+    <!-- End of include : footer.html -->
+
+</body>
+</html>
+

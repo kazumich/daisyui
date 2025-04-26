@@ -1,0 +1,47 @@
+    <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+      @include("/admin/module/setting.html")
+    <!-- BEGIN unit:loop -->
+    <!-- BEGIN entry:loop -->
+      <!-- カード1 -->
+      <a href="{url}" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+        <figure class="relative">
+      <!-- BEGIN_IF [{path}/nem] -->
+      <img src="%{ROOT_DIR}{path}[resizeImg({x}, {y})]" alt="{alt}" width="{x}" height="{y}" class="unit-id-{utid}">
+      <!-- ELSE -->
+      <!-- BEGIN noimage -->
+      <img src="/images/default/noimage.gif" alt="" width="450" height="250">
+      <!-- END noimage -->
+       <!-- END_IF -->
+          <!-- BEGIN new --><span class="badge badge-primary text-white absolute top-2 left-2">NEW</span><!-- END new -->
+        </figure>
+        <div class="card-body p-3">
+          <h2 class="card-title line-clamp-2">{title}</h2>
+          <p class="line-clamp-2">{summary}</p>
+          <div class="card-actions justify-end inline-flex items-center text-sm text-gray-600 hover:text-primary">
+            詳細を見る
+            <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
+      </a>
+    <!-- END entry:loop -->
+    <!-- END unit:loop -->
+  
+    @include("/include/entry/transition-utid-summary.html")
+
+    </div>
+
+  <!-- BEGIN pager:veil -->
+  <div class="join flex justify-center mt-8">
+    <ul class="acms-pager">
+      <!-- BEGIN backLink --><li class="join-item btn"><a href="{url}">«</a></li><!-- END backLink -->
+      <!-- BEGIN page:loop --><li class="join-item btn <!-- BEGIN_IF [{pageCurAttr}/nem] -->btn-active<!-- END_IF -->"><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop -->
+      <!-- BEGIN lastPage:veil --><li class="join-item btn"><span>...</span></li><li class="join-item btn <!-- BEGIN_IF [{pageCurAttr}/nem] -->btn-active<!-- END_IF -->"><span><a href="{lastPageUrl}">{lastPage}</a></span></li><!-- END lastPage:veil -->
+      <!-- BEGIN forwardLink --><li class="join-item btn"><a href="{url}">»</a></li><!-- END forwardLink -->
+    </ul>
+  </div>
+  <!-- END pager:veil -->
+
+  <!-- END_MODULE Entry_Summary -->

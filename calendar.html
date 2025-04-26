@@ -1,0 +1,20 @@
+@extends("/_layouts/one-column.html")
+
+@section("topic-path")
+<div class="w-full overflow-x-auto mb-4 not-prose">
+  <div class="breadcrumbs text-sm whitespace-nowrap">
+    <ol class="inline-flex space-x-2 p-0">
+      <li><a href="%{HOME_URL}">HOME</a></li>
+      <!-- BEGIN_IF [%{DATE_YEAR}/nem] -->
+      <li><a href="%{HOME_URL}">%{DATE_YEAR}年</a></li>
+      <!-- ELSE -->
+      <li><a href="%{HOME_URL}">%{Y}年</a></li>
+       <!-- END_IF -->
+    </ol>
+  </div>
+</div>
+@endsection
+
+@section("main")
+@include("/include/entry/calYear.html", { "module_id" : "cal_year" })
+@endsection

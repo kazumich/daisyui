@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+	@section("head-meta")
+	@include("/include/head/meta.html")
+	@endsection
+
+	@section("head-link")
+	@include("/include/head/link.html")
+	@endsection
+
+	@section("head-js")
+	@include("/include/head/js.html")
+	@endsection
+</head>
+<body>
+    @section("body-start")
+    @include("/include/body-start.html")
+    @endsection
+
+	@section("header")
+	@include("/include/header.html")
+	@endsection
+  
+  <main class="container mx-auto max-w-4xl px-4 py-8">
+
+    @section("admin-part")
+    @include("/admin/action.html")
+    @include("/admin/switch-user.html")
+    @endsection
+
+	@section("topic-path")
+	@include("/include/parts/topicpath.html", { "module_id" : "topicpath" })
+	@endsection
+
+    @section("main")
+    <h1>継承してメインコンテンツを設定してください</h1>
+    @endsection
+
+  </main>
+  @section("footer")
+  @include("/include/footer.html")
+  @endsection
+
+  @section("body-end")
+  @include("/include/body-end.html")
+  @endsection
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  @include("/include/head/meta.html")
+  @include("/include/head/link.html")
+  @include("/include/head/js.html")
+</head>
+<body>
+  
+  @include("/include/header.html")
+
+  <main class="container mx-auto max-w-4xl px-4 py-8">
+    @include("/admin/action.html")
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <div class="md:col-span-8 prose prose-img:max-w-full max-w-full md:max-w-xl mx-auto md:mx-0">
+  
+      @include("/include/parts/topicpath.html")
+      @include("/include/entry/body.html")
+      @include("/include/entry/tagRelational.html")
+
+      </div>
+      <!-- サイドバー -->
+      <div class="md:col-span-4 max-w-xl mx-auto space-y-8">
+
+      @include("/include/side.html")
+
+      </div>
+    </div>
+  </main>
+
+  @include("/include/footer.html")
+  
+</body>
+</html>
+

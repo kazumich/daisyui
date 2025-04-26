@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+@layer components {
+  .calendar-link-0 {
+    @apply inline-block w-full rounded bg-red-500 text-white hover:bg-red-600 transition-colors;
+  }
+  .calendar-link-1, .calendar-link-2 , .calendar-link-3 , .calendar-link-4 , .calendar-link-5 {
+    @apply inline-block w-full rounded bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors;
+  }
+  .calendar-link-6 {
+    @apply inline-block w-full rounded bg-blue-500 text-white hover:bg-blue-600 transition-colors;
+  }
+  .calendar-0 {
+    @apply text-red-600;
+  }
+  .calendar-6 {
+    @apply text-blue-600;
+  }
+
+}
+
+.inline-flex {
+  display: inline-flex !important;
+  }
+  .btn-circle svg {
+  display: inline-block;
+  vertical-align: middle;
+  }
+  .navbar svg, .btn svg {
+  stroke-width: 1.5 !important;
+  font-weight: normal !important;
+  }
+
+  .entry-action {
+    margin: 0 -10px -10px -10px;
+  }
+  .entry-action .acms-admin-btn-action-group {
+    padding-top : 0;
+  }
+  .entry-action table {
+    margin: 0;
+  }
+  .entry-action  tr {
+    border: none;
+  }
+  .entry-action  th {
+    padding: 5px !important;
+    vertical-align: middle;
+  }
+  .entry-action  td {
+    padding: 10px 5px 0px 5px !important;
+    vertical-align: middle;
+  }
+
+  .acms-admin-user {
+    display: inline;
+  }
+
+  .entry-adminbox {
+    margin-bottom : 20px;
+  }

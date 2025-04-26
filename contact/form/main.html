@@ -1,0 +1,133 @@
+<!-- BEGIN_MODULE Form -->
+
+<!-- BEGIN error -->
+<!-- フォームID : {formID} / エラー項目 : {errorKey} -->
+<div class="contact-box">
+  <div class="message-group">
+    <!-- BEGIN_MODULE Touch_SessionWithContribution -->
+    <p class="acms-admin-alert acms-admin-alert-icon acms-admin-alert-danger"><span class="acms-admin-alert-icon-before acms-admin-icon-attention"></span>
+      このエラーメッセージは投稿者以上の権限を持つユーザーのみに表示されています<br><br>
+      エラーが発生している項目：{errorKey}<br><br>テンプレートに記述しているバリデーターまたはコンバーター、フォームID「{formID}」の入力チェック・変換の項目がテンプレートに設置している入力欄と一致していない可能性があります。テンプレートとフォームIDの設定をご確認ください。
+    </p>
+    <!-- END_MODULE Touch_SessionWithContribution -->
+  </div>
+</div>
+<!-- END error -->
+
+<!-- BEGIN step -->
+<!-- フォームステップ：初期 -->
+<div class="contact-box">
+
+	<section>
+		<!-- フォームステップ -->
+		@include("/contact/form/step.html")
+
+		<form action="" method="post" class="h-adr acms-form" enctype="multipart/form-data">
+			
+			@include("/contact/form/input.html")
+
+			<div class="flex justify-center form-control mt-10">
+				<input type="hidden" name="step" value="confirm" />
+				<input type="hidden" name="error" value="reapply" />
+				<input type="hidden" name="id" value="contactForm" />
+				<button type="submit" name="ACMS_POST_Form_Confirm" class="btn btn-primary" id="btnConfirm"> 送信内容の確認へ </button>
+			</div>
+		</form>
+	</section>
+</div>
+<!-- END step -->
+
+<!-- BEGIN step#reapply -->
+<!-- フォームステップ：修正・エラー -->
+<div class="contact-box">
+	<section>
+
+		<!-- フォームステップ -->
+		@include("/contact/form/step.html")
+		<p class="message">入力内容を、もう一度ご確認下さい。</p>
+
+		<form action="" method="post" class="h-adr acms-form" enctype="multipart/form-data">
+			@include("/contact/form/input.html")
+			<div class="flex justify-center form-control mt-10">
+				<input type="hidden" name="step" value="confirm" />
+				<input type="hidden" name="error" value="reapply" />
+
+				<input type="hidden" name="id" value="contactForm" />
+				<button type="submit" name="ACMS_POST_Form_Confirm" class="btn btn-primary" id="btnConfirm"> 送信内容の確認へ </button>
+			</div>
+		</form>
+	</section>
+</div>
+<!-- END step#reapply -->
+
+
+<!-- BEGIN step#confirm -->
+<!-- フォームステップ：確認画面 -->
+<div>
+	<section>
+
+		@include("/contact/form/step.html")
+		<p class="message">内容に誤りがないか、よくご確認ください。</p>
+		@include("/contact/form/confirm.html")
+
+			<div class="flex justify-center gap-4 items-center mt-10">
+				<form action="" method="post">
+					<input type="hidden" name="step" value="reapply" />
+					<input type="hidden" name="takeover" value="{takeover}" />
+					<button type="submit" name="ACMS_POST_Form_Chain" class="btn btn-ghost"> 修正する </button>
+				</form>
+			
+				<form action="thanks.html" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="To[]" value="{email}" />
+					<input type="hidden" name="AdminReply-To[]" value="{email}" />
+					<input type="hidden" name="AdminFrom[]" value="{email}" />
+					<input type="hidden" name="step" value="result" />
+					<input type="hidden" name="takeover" value="{takeover}" />
+					<input type="hidden" name="id" value="contactForm" />
+					<button type="submit" name="ACMS_POST_Form_Submit" class="btn btn-primary"> 送信する </button>
+				</form>
+			</div>
+		
+	</section>
+</div>
+<!-- END step#confirm -->
+
+
+<!-- BEGIN step#result -->
+<!-- フォームステップ：完了画面 -->
+<div class="contact-box">
+	<section>
+		<div class="message-group">
+			<p class="message-text">お問い合わせありがとうございました。以下の内容で送信しました。</p>
+			<p class="message-back-link"><a href="%{BASE_URL}">→ トップページへ戻る</a></p>
+		</div>
+		@include("/contact/form/confirm.html")
+	</section>
+</div>
+<!-- END step#result -->
+
+<!-- BEGIN step#forbidden -->
+<div class="contact-box">
+	<section>
+		<h2>不正なアクセスです。</h2>
+		<div class="message-group">
+			<p class="message-text">お手数ですが、はじめからやり直して下さい。</p>
+			<p class="message-back-link"><a href="%{BASE_URL}contact/">→ お問い合わせフォームへ戻る</a></p>
+		</div>
+	</section>
+</div>
+<!-- END step#forbidden -->
+
+<!-- BEGIN step#repeated -->
+<div class="contact-box">
+	<section>
+		<h2>連続投稿は禁止されています。</h2>
+		<div class="message-group">
+			<p class="message-text">入力された内容は正常に送信されました。<br>送信内容は、登録されたメールアドレス宛にお送りした確認メールからご確認ください。</p>
+			<p class="message-back-link"><a href="%{BASE_URL}">→ トップページへ戻る</a></p>
+		</div>
+	</section>
+</div>
+<!-- END step#repeated -->
+
+<!-- END_MODULE Form -->

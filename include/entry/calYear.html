@@ -1,0 +1,64 @@
+
+<!-- BEGIN_MODULE Calendar_Year id="{{module_id}}" -->
+ 
+<div class="flex items-center justify-center gap-4 mb-6">
+  
+  <div class="w-10 text-left">
+    <!-- BEGIN prevLink -->
+    <a href="{url}" class="btn btn-ghost" title="前年へ">«</a>
+    <!-- END prevLink -->
+  </div>
+
+  <h1 class="text-2xl font-semibold">{year}年</h1>
+
+  <div class="w-10 text-right">
+    <!-- BEGIN nextLink -->
+    <a href="{url}" class="btn btn-ghost" title="翌年へ">»</a>
+    <!-- END nextLink -->
+  </div>
+
+</div>
+
+
+
+<div class="max-w-4xl mx-auto py-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+	<!-- BEGIN unit:loop -->
+	<!-- BEGIN month:loop -->
+  <div class="card bg-base-100">
+    <div class="card-body px-4 md:px-2 lg:px-6">
+      <h2 class="card-title justify-center"><a href="{monthUrl}">{monthDate}[date('n')]月</a></h2>
+
+			<table class="table table-xs w-full">
+				<thead>
+          <tr>
+					<!-- BEGIN weekLabel:loop -->
+					<td class="calendar-{w}">{label}</td>
+					<!-- END weekLabel:loop -->
+				</tr>    
+        </thead>
+        <tbody  class="text-center">
+				<!-- BEGIN week:loop -->
+				<tr>
+					<!-- BEGIN day:loop -->
+					<!-- BEGIN spacer -->
+					<td>&nbsp;</td>
+					<!-- END spacer -->
+					<!-- BEGIN none -->
+					<td class="calendar-{w}">{day}</td>
+					<!-- END none -->
+					<!-- BEGIN link -->
+					<td class="calendar-{w}"><a href="{url}" class="calendar-link-{w}">{day}</a></td>
+					<!-- END link -->
+					<!-- END day:loop -->
+				</tr>
+				<!-- END week:loop -->
+      </tbody>
+			</table>
+      </div>
+      </div>
+	<!-- END month:loop -->
+	<!-- END unit:loop -->
+</div>
+</div>
+<!-- END_MODULE Calendar_Year -->

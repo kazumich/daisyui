@@ -1,0 +1,80 @@
+@extends("/_layouts/one-column.html")
+
+@section("topic-path")
+@endsection
+
+
+@section("main")
+
+<h2 class="text-3xl font-extrabold">Sample Summary1</h2>
+
+<ul class="menu menu-horizontal pb-5 px-0">
+  <li><a href="summary1.html">1</a></li>
+  <li><a href="summary2.html">2</a></li>
+  <li><a href="summary3.html">3</a></li>
+  <li><a href="summary4.html">4</a></li>
+  <li><a href="summary5.html">5</a></li>
+  <li><a href="summary6.html">6</a></li>
+</ul>
+
+
+<div class="relative aspect-[2/1] w-full mt-10">
+  <div class="absolute inset-0 grid grid-cols-3 gap-1 md:gap-4">
+    <div class="col-span-2 relative overflow-hidden group">
+      <!-- GET_Rendered id="contents1" -->
+    </div>
+    <div class="grid grid-rows-2 gap-1 md:gap-4">
+      <div class="relative overflow-hidden group">
+        <!-- GET_Rendered id="contents2" -->
+      </div>
+      <div class="relative overflow-hidden group">
+        <!-- GET_Rendered id="contents3" -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="relative aspect-[2/1] w-full mt-1 md:mt-4">
+  <div class="absolute inset-0 grid grid-cols-3 gap-1 md:gap-4">
+    <div class="grid grid-rows-2 gap-1 md:gap-4">
+      <div class="relative overflow-hidden group">
+        <!-- GET_Rendered id="contents4" -->
+      </div>
+      <div class="relative overflow-hidden group">
+        <!-- GET_Rendered id="contents5" -->
+      </div>
+    </div>
+    <div class="col-span-2 relative overflow-hidden group">
+      <!-- GET_Rendered id="contents6" -->
+    </div>
+  </div>
+</div>
+
+<!-- BEGIN_MODULE Entry_Summary id="summary_index" -->
+<!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
+<!-- BEGIN_SetRendered id="contents{iNum}" -->
+  <a href="{url}">
+      <!-- BEGIN_IF [{path}/nem] -->
+      <img src="%{ROOT_DIR}{path}[resizeImg({x}, {y})]" alt="{alt}" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" width="{x}" height="{y}">
+      <!-- ELSE --><!-- BEGIN noimage -->
+      <img src="/images/noimage.png" alt="" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" width="{noImgX}" height="{noImgY}"><!-- END noimage -->
+      <!-- END_IF -->
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/70 to-transparent"></div>
+ 
+      <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
+        <p class="text-xs sm:text-sm md:text-sm lg:text-base text-white">{date#Y}/{date#m}/{date#d} / <!-- BEGIN categoryField -->{fieldCategoryName}<!-- END categoryField --> / <!-- BEGIN userField -->{fieldUserName}<!-- END userField --></p>
+        <h2 class="mt-1 text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">{title}</h2>
+        <div class="overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-40">
+          <p class="mt-2 text-xs sm:text-sm md:text-sm lg:text-base text-white line-clamp-2">
+            {summary}
+          </p>
+        </div>
+      </div>
+  </a>
+<!-- END_SetRendered -->
+<!-- END entry:loop -->
+<!-- END unit:loop -->
+<!-- END_MODULE Entry_Summary -->
+
+
+@endsection
+

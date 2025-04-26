@@ -1,0 +1,24 @@
+<!-- BEGIN_MODULE Media_Banner id="top_image" -->
+<div>
+  @include("/admin/module/setting.html")
+    <!-- BEGIN banner:loop -->
+      <!-- BEGIN banner#img -->
+      <div
+      class="hero min-h-screen"
+      style="background-image: url(%{MEDIA_ARCHIVES_DIR}{img});">
+      <div class="hero-overlay"></div>
+      <div class="hero-content text-neutral-content text-center">
+        <div class="max-w-md">
+          <h1 class="mb-5 text-5xl font-bold">daisyUI sample</h1>
+          <p class="mb-5">
+            This file is a static HTML file created with daisyUI.<br>
+Please use it to practice creating a-blog cms themes.
+          </p>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+      </div>
+    </div>
+      <!-- END banner#img -->
+    <!-- END banner:loop -->
+</div>
+<!-- END_MODULE Media_Banner -->

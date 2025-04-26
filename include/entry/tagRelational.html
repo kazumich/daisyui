@@ -1,0 +1,23 @@
+<!-- BEGIN_MODULE Entry_TagRelational id="tag_relational" -->
+<section class="mt-12">
+  @include("/admin/module/setting.html")
+  <h3>関連記事</h3>
+  <p>この記事のハッシュタグ <!-- GET_Rendered id="tag" --> から関連する記事を表示しています。</p>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 not-prose">
+    <!-- BEGIN entry:loop -->
+    <div>
+      <a href="{url}" class="hover:opacity-80">
+      <!-- BEGIN_IF [{path}/nem] -->
+      <img src="%{ROOT_DIR}{path}[resizeImg({x}, {y})]" alt="{alt}" class="unit-id-{utid}" width="{x}" height="{y}">
+      <!-- ELSE -->
+      <img src="/images/default/noimage.gif" alt="" class="object-cover rounded" width="{x}" height="{y}" />
+      <!-- END_IF -->
+      <p class="mt-2 line-clamp-2">{title}</p>
+      </a>
+    </div>
+    <!-- END entry:loop -->
+  </div>
+
+</section>
+<!-- END_MODULE Entry_TagRelational -->

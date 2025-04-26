@@ -1,0 +1,53 @@
+@extends("/_layouts/one-column.html")
+
+@section("topic-path")
+@endsection
+
+@section("main")
+
+      <h2 class="text-3xl font-extrabold">Sample Summary6</h2>
+
+      <ul class="menu menu-horizontal pb-5 px-0">
+        <li><a href="summary1.html">1</a></li>
+        <li><a href="summary2.html">2</a></li>
+        <li><a href="summary3.html">3</a></li>
+        <li><a href="summary4.html">4</a></li>
+        <li><a href="summary5.html">5</a></li>
+        <li><a href="summary6.html">6</a></li>
+      </ul>
+
+
+      <section>
+<!-- BEGIN_MODULE Entry_Summary id="summary_index" -->
+<!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
+      <article class="relative flex rounded overflow-hidden p-2 hover:bg-gray-100 group">
+        <a href="{url}" class="absolute inset-0 z-10" aria-label="記事詳細へ"></a>
+        <figure class="overflow-hidden w-[180px] sm:w-[280px] aspect-[4/3]">
+          <!-- BEGIN_IF [{path}/nem] -->
+      <img src="%{ROOT_DIR}{path}[resizeImg({x}, {y})]" alt="{alt}" class="rounded object-cover w-full h-full transition-transform duration-300 ease-out group-hover:scale-105" width="{x}" height="{y}">
+      <!-- ELSE --><!-- BEGIN noimage -->
+      <img src="/images/noimage.png" alt="" class="rounded object-cover w-full h-full transition-transform duration-300 ease-out group-hover:scale-105" width="{noImgX}" height="{noImgY}"><!-- END noimage -->
+      <!-- END_IF -->
+        </figure>
+        <div class="flex flex-col justify-center pl-4 flex-1 transition-colors duration-300 ease-out">
+          <p class="text-sm sm:text-base text-gray-500 mb-1 sm:mb-2">
+            <!-- BEGIN categoryField -->{fieldCategoryName}<!-- END categoryField -->
+          </p>
+          <h3 class="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">
+            {title}
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700 mb-1 sm:mb-2 line-clamp-2">
+          {summary}</p>
+          <p class="text-sm sm:text-base text-gray-700 mb-1 sm:mb-2">
+           {date#Y}年{date#m}月{date#d}日
+          </p>
+        </div>
+      </article>
+<!-- END entry:loop -->
+<!-- END unit:loop -->
+<!-- END_MODULE Entry_Summary -->
+
+
+    </section>
+      
+@endsection

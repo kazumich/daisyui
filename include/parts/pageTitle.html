@@ -1,0 +1,27 @@
+<div class="mb-4 w-full">
+  <!-- BEGIN_MODULE Touch_Tag -->
+  <!-- BEGIN_MODULE Tag_Filter id="tag_filter"-->
+  <!-- BEGIN tagBox -->
+    <div class="prose"><h1 class="mb-4">
+      <!-- BEGIN selected:loop --><a href="{url}" class="">#{name}</a><!-- BEGIN glue --> , <!-- END glue --><!-- END selected:loop --></li>
+    </h1></div>
+    <!-- BEGIN choice:veil -->
+    <p class="text-lg">絞り込み検索 : <!-- BEGIN choice:loop --><a href="{url}" class="hover:text-primary">#{name}</a><!-- BEGIN glue --> , <!-- END glue --><!-- END choice:loop -->
+    <!-- END choice:veil -->
+    </p>
+ 
+  <!-- END tagBox -->
+  <!-- END_MODULE Tag_Filter -->
+  <!-- END_MODULE Touch_Tag -->
+
+  <!-- BEGIN_MODULE Touch_Keyword -->
+  <div class="prose"><h1 class="mb-4">検索：%{KEYWORD}</h1></div>
+  <!-- END_MODULE Touch_Keyword -->
+
+  <!-- BEGIN_MODULE Touch_Category -->
+  <div class="prose"><h1 class="mb-4">%{CATEGORY_NAME}</h1></div>
+  <!-- END_MODULE Touch_Category -->
+  
+  <!-- BEGIN_IF [%{DATE_YEAR}/nem] --><div class="prose"><h1 class="mb-4">%{DATE_YEAR}年<!-- BEGIN_IF [%{DATE_MONTH}/nem] -->%{DATE_MONTH}月<!-- BEGIN_IF [%{DATE_DAY}/nem] -->%{DATE_DAY}日<!-- END_IF --><!-- END_IF --></h1></div><!-- END_IF -->
+  
+</div>

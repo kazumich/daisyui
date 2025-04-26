@@ -1,0 +1,38 @@
+<h2 class="card-title">お問い合わせ情報</h2>
+<div class="not-prose">
+	<div class="my-4">
+	  <p class="font-semibold mb-1">ご用件</p>
+	  <p class="text-base">{description}</p>
+	</div>
+	<div class="my-4">
+	  <p class="font-semibold mb-1">お問い合わせ内容</p>
+	  <p class="text-base">{inquiry}[nl2br]</p>
+	</div>
+</div>		
+
+	<!-- お客様情報 -->
+	<h2 class="card-title mt-10">お客様情報</h2>
+<div class="not-prose">
+	<div class="my-4">
+	  <p class="font-semibold mb-1">所属（会社名・学校名 など）</p>
+	<p class="text-base">{organization}</p>
+	</div>
+	<div class="my-4">
+	  <p class="font-semibold mb-1">お名前</p>
+	  <p class="text-base">{name}</p>
+	</div>
+	<div class="my-4">
+	  <p class="font-semibold mb-1">メールアドレス</p>
+	  <p class="text-base">{email}</p>
+	</div>
+	<div class="my-4">
+	  <p class="font-semibold mb-1">お電話番号</p>
+	  <p class="text-base">{tel}</p>
+	</div>
+	<div class="my-4">
+	  <p class="font-semibold mb-1">ご住所</p>
+		<p class="text-base">〒{postal-code}<br>
+		{address-level1} {address1}
+		<!-- BEGIN address2:veil --><br>{address2}<!-- END address2:veil --></p>
+	</div>
+</div>

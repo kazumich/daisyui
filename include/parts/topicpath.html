@@ -1,0 +1,14 @@
+<!-- BEGIN_MODULE Topicpath id="{{module_id}}"-->
+<div class="w-full overflow-x-auto mb-4 not-prose">
+  <div class="breadcrumbs text-sm whitespace-nowrap">
+    <ol class="inline-flex space-x-2 p-0">
+<!-- BEGIN blog:loop -->
+<li><a href="{url}">{name}</a></li><!-- END blog:loop --><!-- BEGIN category:loop -->
+<li><a href="{url}">{name}</a></li><!-- END category:loop --><!-- BEGIN entry -->
+<li><a href="{url}">{title}</a></li><!-- END entry -->
+<!-- BEGIN_MODULE Touch_Tag --><li>Tag Search</li><!-- END_MODULE Touch_Tag -->
+<!-- BEGIN_IF [%{DATE_YEAR}/nem] --><li>%{DATE_YEAR}年<!-- BEGIN_IF [%{DATE_MONTH}/nem] -->%{DATE_MONTH}月<!-- BEGIN_IF [%{DATE_DAY}/nem] -->%{DATE_DAY}日<!-- END_IF --><!-- END_IF --></li><!-- END_IF -->
+</ol>
+</div>
+</div>
+<!-- END_MODULE Topicpath -->

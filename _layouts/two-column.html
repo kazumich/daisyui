@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+	@section("head-meta")
+	@include("/include/head/meta.html")
+	@endsection
+
+	@section("head-link")
+	@include("/include/head/link.html")
+	@endsection
+
+	@section("head-js")
+	@include("/include/head/js.html")
+	@endsection
+</head>
+<body>
+    @section("body-start")
+    @include("/include/body-start.html")
+    @endsection
+
+	@section("header")
+	@include("/include/header.html")
+	@endsection
+  
+  <main class="container mx-auto max-w-4xl px-4 py-8">
+
+    @section("admin-part")
+    @include("/admin/action.html")
+    @include("/admin/switch-user.html")
+    @endsection
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="prose prose-img:max-w-full max-w-full mx-auto md:max-w-xl md:col-span-8 md:mx-0">
+    
+	    @section("topic-path")
+	    @include("/include/parts/topicpath.html", { "module_id" : "topicpath" })
+	    @endsection
+
+        @section("main")
+
+        <h1>継承してメインコンテンツを設定してください</h1>
+        
+        @endsection
+
+        </div>
+        <div class="md:col-span-4 max-w-xl mx-auto space-y-8">
+
+        @section("sub")
+
+        @include("/include/parts/search.html")
+        @include("/include/entry/summarySub.html" , { "module_id" : "summary_sub" })
+        @include("/include/category/list.html", { "module_id" : "category_list" })
+        @include("/include/entry/archiveList.html" , { "module_id" : "archiveList" })
+        @include("/include/parts/tagCloud.html", { "module_id" : "tag_cloud" })
+
+        @endsection
+
+        </div>
+    </div>
+  </main>
+  @section("footer")
+  @include("/include/footer.html")
+  @endsection
+
+  @section("body-end")
+  @include("/include/body-end.html")
+  @endsection
+</body>
+</html>
+
+
+
+

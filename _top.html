@@ -1,0 +1,13 @@
+@extends("/_layouts/one-column.html")
+
+@section("topic-path")
+@endsection
+
+@section("header")
+@parent
+@include("/include/parts/slider.html") 
+@endsection
+
+@section("main")
+@include("/include/entry/summary.html", { "module_id" : "summary_top" })
+@endsection

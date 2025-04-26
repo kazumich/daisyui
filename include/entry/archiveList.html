@@ -1,0 +1,16 @@
+<!-- BEGIN_MODULE Entry_ArchiveList id="{{module_id}}" -->
+  <!-- アーカイブ -->
+  <div>
+    @include("/admin/module/setting.html")
+    <h2 class="text-xl font-bold mb-4">アーカイブ</h2>
+    <ul>
+      <!-- BEGIN archive:loop -->
+      <li class="flex justify-between border-b border-gray-300 py-2">
+        <a href="{url}" class="hover:underline">{date#Y}年 {date#n}月</a>
+        <span class="badge">{amount}</span>
+      </li>
+      <!-- END archive:loop -->
+    </ul>
+    <p class="mt-2 text-right text-sm"><a href="%{HOME_URL}calendar.html" class="hover:underline">年間カレンダー</a></p>
+  </div>
+  <!-- END_MODULE Entry_ArchiveList -->

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  @include("/include/head/meta.html")
+  @include("/include/head/link.html")
+  @include("/include/head/js.html")
+</head>
+<body>
+  @include("/include/header.html")
+
+  @include("/include/parts/slider.html") 
+  
+  <main class="container mx-auto max-w-4xl px-4 py-8">
+    @include("/admin/action.html")
+    <div class="max-w-4xl mx-auto py-8">
+
+      @include("/include/entry/summary.html")   
+   
+    </div>
+  </main>
+
+  @include("/include/footer.html")
+  
+</body>
+</html>
+

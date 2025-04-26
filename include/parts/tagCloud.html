@@ -1,0 +1,11 @@
+  <!-- BEGIN_MODULE Tag_Cloud id="{{module_id}}" -->
+  <div>
+    @include("/admin/module/setting.html")
+    <h2 class="text-xl font-bold mb-4">ハッシュタグ</h2>
+    <div class="flex flex-wrap gap-2 items-center">
+      <!-- BEGIN tag:loop -->
+      <a href="{url}" class="text-{level}[xtagSizeTw] hover:text-primary {level} {levelClass}" title="{name}:{amount}件">#{name}</a>
+      <!-- END tag:loop -->
+    </div>
+  </div>
+  <!-- END_MODULE Tag_Cloud -->

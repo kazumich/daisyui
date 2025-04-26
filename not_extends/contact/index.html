@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  @include("/include/head/meta.html")
+  @include("/include/head/link.html")
+  @include("/include/head/js.html")
+</head>
+<body>
+  @include("/include/header.html")
+  
+  <main class="container mx-auto max-w-4xl px-4 py-8">
+    
+    @include("/admin/action.html")
+
+    <div class="w-full overflow-x-auto mb-4 not-prose">
+      <div class="breadcrumbs text-sm whitespace-nowrap">
+        <ol class="inline-flex space-x-2 p-0">
+          <li><a href="%{HOME_URL}">HOME</a></li>
+          <li><a href="%{HOME_URL}contact/">お問い合わせ</a></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="max-w-xl mx-auto prose">
+
+      <h1 class="mb-3">お問い合わせフォーム</h1>
+
+      @include("/contact/form/main.html")
+
+    </div>
+    
+  </main>
+  @include("/include/footer.html")
+</body>
+</html>
+

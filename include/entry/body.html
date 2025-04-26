@@ -1,0 +1,100 @@
+<!-- BEGIN_MODULE Entry_Body id="{{module_id}}" -->
+ <div>
+  @include("/admin/module/setting.html")
+  <!-- BEGIN notFound -->
+  <p>ただいまページを準備しております。もうしばらくお待ちください。</p>
+  <!-- END notFound -->
+  
+  <!-- BEGIN entry:loop -->
+
+  @include("/admin/entry/title.html")
+  <h1 class="mb-3 entry-title"><a href="{titleUrl}" class="no-underline">{title}</a></h1>
+    <div class="text-sm flex flex-wrap items-center gap-3 mt-0 mb-8">
+    <span>{date#Y}年{date#m}月{date#d}日</span>
+    <!-- BEGIN new --><span class="badge badge-primary badge-xs">NEW</span><!-- END new -->
+    <!-- BEGIN category:loop --><span><a href="{url}" class="no-underline hover:text-primary">{name}</a></span><!-- BEGIN glue -->
+        /
+        <!-- END glue --><!-- END category:loop -->
+    <span>
+      <!-- BEGIN_SetRendered id="tag" -->
+      <!-- BEGIN tag:loop --><a href="{url}" class="no-underline hover:text-primary text-gray-500">#{name}</a> <!-- END tag:loop -->
+      <!-- END_SetRendered -->
+			<!-- GET_Rendered id="tag" -->
+    </span>
+    </div>
+
+      <!-- BEGIN unit:veil -->
+      <div class="acms-entry">
+        <div class="acms-grid-r">
+        @include("/include/unit.html")
+        </div>
+      </div>
+
+      <hr class="clearHidden">
+      <!-- END unit:veil -->
+      <!-- BEGIN continueLink:veil -->
+      <p><a href="{continueUrl}" class="acms-btn-flat"><span class="acms-icon-arrow-right"></span>「{continueName}」の続きを読む</a></p>
+      <!-- END continueLink:veil -->
+  
+      <!-- BEGIN formBody -->
+      @include("/include/form/unit.html")
+      <hr class="clearHidden">
+      <!-- END formBody -->
+  
+      @include("/admin/entry/edit-%{IS_ADMIN}.html") 
+      <div id="entry-adminbox" class="entry-adminbox">
+      <div class="entry-action">
+      @include("/admin/entry/action.html")
+      </div>
+      @include("/admin/entry/revision-info.html")
+      </div>
+
+      @include("/include/entry/transition-utid-body.html")
+ 
+ <!-- END entry:loop -->
+ 
+<!-- BEGIN serialNavi:veil -->
+<nav class="flex justify-between items-center w-full max-w-4xl mx-auto py-6 gap-8" aria-label="ページ送り">
+  <!-- BEGIN prevLink -->
+  <a href="{url}" class="flex items-center space-x-2 max-w-[40%] hover:opacity-80 no-underline">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
+    <!-- BEGIN_MODULE\ Entry_Summary id="serial_navi_img" ctx="eid/{eid}" --><!-- BEGIN\ unit:loop --><!-- BEGIN\ entry:loop --><!-- BEGIN\ path:veil --><img src="%{ROOT_DIR}\{path\}[resizeImg(\{x\}, \{y\})]" alt="\{alt\}" width="\{x\}" height="\{y\}" class="w-16 h-16 object-cover rounded"><!-- END\ path:veil --><!-- END\ entry:loop --><!-- END\ unit:loop --><!-- END_MODULE\ Entry_Summary -->
+  <span class="line-clamp-2">{name}</span>
+  </a><!-- END prevLink -->
+  <!-- BEGIN nextLink -->
+  <a href="{url}" class="flex items-center space-x-2 max-w-[40%] hover:opacity-80 no-underline">
+    <span class="line-clamp-2">{name}</span>
+<!-- BEGIN_MODULE\ Entry_Summary id="serial_navi_img" ctx="eid/{eid}" --><!-- BEGIN\ unit:loop --><!-- BEGIN\ entry:loop --><!-- BEGIN\ path:veil --><img src="%{ROOT_DIR}\{path\}[resizeImg(\{x\}, \{y\})]" alt="\{alt\}" width="\{x\}" height="\{y\}" class="w-16 h-16 object-cover rounded"><!-- END\ path:veil --><!-- END\ entry:loop --><!-- END\ unit:loop --><!-- END_MODULE\ Entry_Summary -->
+<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+</svg>
+</a><!-- END nextLink -->
+</nav>
+<!-- END serialNavi:veil -->
+
+</div>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const acmsEntry = document.querySelector('.acms-entry');
+      if (acmsEntry && acmsEntry.offsetHeight > window.innerHeight) {
+          const adminBox = document.getElementById('entry-adminbox');
+          if (adminBox) {
+              const entryTitle = document.querySelector('.entry-title');
+              if (entryTitle) {
+                  const clonedAdminBox = adminBox.cloneNode(true);
+                  clonedAdminBox.id = 'entry-adminbox-clone';
+                  if (!clonedAdminBox.classList.contains('entry-adminbox')) {
+                      clonedAdminBox.classList.add('entry-adminbox');
+                  }
+                  entryTitle.parentNode.insertBefore(clonedAdminBox, entryTitle);
+              }
+          }
+      }
+  });
+  </script>
+
+  <!-- END_MODULE Entry_Body -->
+

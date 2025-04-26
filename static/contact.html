@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | daisyUI blog theme</title>
+    <link rel="stylesheet" href="../src/style.css" />
+    <script src="../js/dark-mode.js" charset="UTF-8" defer></script>
+  </head>
+  <body>
+     <!-- Start of include : header.html -->
+     <header class="bg-base-100 shadow-sm">
+      <div class="navbar container mx-auto max-w-4xl px-4">
+        <div class="navbar-start">
+          <a href="index.html" class="text-xl font-bold hover:text-primary">daisyUI Blog Theme</a>
+        </div>
+        <div class="navbar-end flex items-center gap-2">
+          <div class="drawer drawer-end lg:hidden">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content flex justify-end">
+              <button onclick="toggleTheme()" class="btn btn-ghost btn-circle">
+                <svg id="theme-icon-desktop" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25M12 18.75V21M5.636 5.636 7.227 7.227M16.773 16.773l1.591 1.591M3 12h2.25M18.75 12H21M5.636 18.364l1.591-1.591M16.773 7.227l1.591-1.591M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+              </button>
+              <label for="my-drawer" class="btn btn-ghost btn-circle inline-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="stroke-width: 1.5; display: inline-block; vertical-align: middle;">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </label>
+            </div>
+            <div class="drawer-side z-[100]">
+              <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+              <div class="bg-base-200 min-h-full w-72 px-4 pt-3">
+                <div class="flex justify-end">
+                  <label for="my-drawer" class="btn btn-circle btn-ghost">✕</label>
+                </div>
+                <ul class="menu bg-base-200 text-base-content min-h-full w-full p-6 text-lg">
+
+                  <!-- <li><a href="index.html" class="btn w-full mb-3">Home</a></li> -->
+                  <li><a href="list.html" class="btn w-full mb-3">Index</a></li>
+                  <li><a href="entry.html" class="btn w-full mb-3">Entry</a></li>
+                  <li>
+                    <a href="calendar.html" class="btn w-full mb-3">Calendar</a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="btn btn-primary text-white w-full mb-3">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <ul class="menu menu-horizontal hidden lg:flex items-center gap-2">
+            <li>
+              <button onclick="toggleTheme()" class="btn btn-ghost btn-circle">
+                <svg id="theme-icon-mobile" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25M12 18.75V21M5.636 5.636 7.227 7.227M16.773 16.773l1.591 1.591M3 12h2.25M18.75 12H21M5.636 18.364l1.591-1.591M16.773 7.227l1.591-1.591M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+              </button>
+            </li>
+            <!-- <li><a href="index.html">Home</a></li> -->
+            <li><a href="list.html">Index</a></li>
+            <li><a href="entry.html">Entry</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="contact.html" class="btn btn-primary text-white">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- End of include : header.html -->
+
+  <main class="container mx-auto max-w-4xl px-4 py-8">
+
+    <div class="w-full overflow-x-auto mb-4 not-prose">
+      <div class="breadcrumbs text-sm whitespace-nowrap">
+        <ol class="inline-flex space-x-2 p-0">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="max-w-xl mx-auto prose">
+      <h1 class="mb-3">お問い合わせフォーム</h1>
+      <div class="contact-box">
+      <section>
+      <ol class="steps w-full">
+      <li class="step step-primary">内容の入力</li>
+      <li class="step">内容の確認</li>
+      <li class="step">送信完了</li>
+      </ol>
+      <form action="confirm.html" method="post" class="h-adr" enctype="multipart/form-data">
+      <div class="space-y-4"> <h2 class="text-xl font-bold border-b pb-2">お問い合わせ情報</h2>
+      <div class="form-control">
+      <label class="label">
+      <span class="label-text"><span class="badge badge-soft badge-error badge-xs text-white mr-1">必須</span>ご用件</span>
+      </label>
+      <select id="description" name="description" class="select select-bordered w-full">
+      <option value="">選択してください</option>
+      <option value="ご質問">ご質問</option>
+      <option value="ご要望">ご要望</option>
+      <option value="資料請求">資料請求</option>
+      <option value="その他">その他</option>
+      </select>
+      </div>
+      <div class="form-control">
+      <label class="label">
+      <span class="label-text"><span class="badge badge-soft badge-error badge-xs text-white mr-1">必須</span>お問い合わせ内容</span>
+      </label>
+      <textarea id="inquiry" name="inquiry" class="textarea textarea-bordered h-32 w-full max-w-none" placeholder="お問い合わせ内容を入力してください。"></textarea>
+      </div>
+      </div>
+      <div class="space-y-4">
+      <h2 class="text-xl font-bold border-b pb-2">お客様情報</h2>
+      <div class="form-control">
+      <label class="label">
+      <span class="label-text"><span class="badge badge-soft badge-neutral badge-xs text-white mr-1">任意</span>所属（会社名・学校名など）</span>
+      </label>
+      <input id="organization" type="text" name="organization" value="" value="" placeholder="例）株式会社〇〇〇" class="input input-bordered w-full">
+      </div>
+      <div class="form-control">
+      <label class="label">
+      <span class="label-text"><span class="badge badge-soft badge-error badge-xs text-white mr-1">必須</span>お名前</span>
+      </label>
+      <input id="name" type="text" name="name" value="" placeholder="例）山田 太郎" class="input input-bordered w-full">
+      </div>
+      <div class="form-control">
+      <label class="label">
+      <span class="label-text"><span class="badge badge-soft badge-error badge-xs text-white mr-1">必須</span>メールアドレス</span>
+      </label>
+      <input id="email" type="email" name="email" value="" placeholder="例）info@example.com" class="input input-bordered w-full">
+      </div>
+      <div class="form-control">
+      <label class="label">
+      <span class="label-text"><span class="badge badge-soft badge-neutral badge-xs text-white mr-1">任意</span>お電話番号</span>
+      </label>
+      <input id="tel" type="tel" name="tel" placeholder="例）0123456789" class="input input-bordered w-full">
+      </div>
+      <div class="form-control">
+      <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+      <input type="hidden" class="p-country-name" value="Japan">
+      <label class="label">
+      <span class="label-text"><span class="badge badge-soft badge-error badge-xs text-white mr-1">必須</span>ご住所</span>
+      </label>
+      <div class="flex gap-2 w-full">
+      <input type="text" name="postal-code" autocomplete="postal-code" value="" id="postal-code" class="js-insert-hyphen p-postal-code input input-bordered flex-1" size="9" maxlength="8" placeholder="郵便番号">
+
+      <select name="address-level1" autocomplete="address-level1" id="address-level1" class="select select-bordered flex-1 p-region form-select">
+      <option>都道府県を選択</option>
+      <option value="北海道">北海道</option>
+      <option value="青森県">青森県</option>
+      <option value="岩手県">岩手県</option>
+      <option value="宮城県">宮城県</option>
+      <option value="秋田県">秋田県</option>
+      <option value="山形県">山形県</option>
+      <option value="福島県">福島県</option>
+      <option value="茨城県">茨城県</option>
+      <option value="栃木県">栃木県</option>
+      <option value="群馬県">群馬県</option>
+      <option value="埼玉県">埼玉県</option>
+      <option value="千葉県">千葉県</option>
+      <option value="東京都">東京都</option>
+      <option value="神奈川県">神奈川県</option>
+      <option value="新潟県">新潟県</option>
+      <option value="富山県">富山県</option>
+      <option value="石川県">石川県</option>
+      <option value="福井県">福井県</option>
+      <option value="山梨県">山梨県</option>
+      <option value="長野県">長野県</option>
+      <option value="岐阜県">岐阜県</option>
+      <option value="静岡県">静岡県</option>
+      <option value="愛知県">愛知県</option>
+      <option value="三重県">三重県</option>
+      <option value="滋賀県">滋賀県</option>
+      <option value="京都府">京都府</option>
+      <option value="大阪府">大阪府</option>
+      <option value="兵庫県">兵庫県</option>
+      <option value="奈良県">奈良県</option>
+      <option value="和歌山県">和歌山県</option>
+      <option value="鳥取県">鳥取県</option>
+      <option value="島根県">島根県</option>
+      <option value="岡山県">岡山県</option>
+      <option value="広島県">広島県</option>
+      <option value="山口県">山口県</option>
+      <option value="徳島県">徳島県</option>
+      <option value="香川県">香川県</option>
+      <option value="愛媛県">愛媛県</option>
+      <option value="高知県">高知県</option>
+      <option value="福岡県">福岡県</option>
+      <option value="佐賀県">佐賀県</option>
+      <option value="長崎県">長崎県</option>
+      <option value="熊本県">熊本県</option>
+      <option value="大分県">大分県</option>
+      <option value="宮崎県">宮崎県</option>
+      <option value="鹿児島県">鹿児島県</option>
+      <option value="沖縄県">沖縄県</option>
+      </select>
+      </div>
+      <div class="space-y-4 mt-2">
+      <input id="address1" type="text" name="address1" autocomplete="address-level2 address-line1" value="" class="p-locality p-street-address p-extended-address input input-bordered w-full !mb-2" placeholder="市区町村・番地">
+      <input id="address2" type="text" name="address2" autocomplete="address-line2" value="" class="input input-bordered w-full" placeholder="建物名等（任意）">
+      </div>
+      </div>
+      </div>
+      <div class="flex justify-center form-control mt-10">
+      <button type="submit" class="btn btn-primary"> 送信内容の確認へ </button>
+      </div>
+      </form>
+      </section>
+      </div>
+      </div>
+
+  </main>
+
+    <!-- Start of include : footer.html -->
+    <footer class="bg-neutral text-neutral-content">
+      <div class="container mx-auto max-w-4xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <aside class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 1000 1000" class="fill-current">
+            <path fill="#fff" stroke-width="0" d="m500.03,0C223.85,0,0,223.9,0,499.96s223.85,500.04,500.03,500.04,499.97-223.87,499.97-500.04S776.15,0,500.03,0Zm181.14,679.73c-63.89,79.66-147.67,95.34-214.73,91.16-88-5.49-181.72-84.27-185.41-166.56-2.92-64.93,29.85-155.88,153.55-167.68,31.13-2.95,66.43,6.33,72.72,39.85,6.21,33.3-24.98,51.78-42,53.1-58.94,4.56-81.9,35.45-75.33,74.74,6.26,37.69,50,55.43,90.09,56.58,37.7,1.03,97.77-16.18,127.85-61.93,57.5-87.51,26.18-163.59-6.52-200.25-45.93-51.47-109.58-82.18-217.12-32.18-25.54,11.9-51.3,9.98-71.24-6.27-11.46-9.4-19.28-31.17-14.39-49.51,4.19-15.73,12.73-30.7,39.53-45.44,135.98-74.98,266.52-24.15,335.59,51.32,75.94,83.05,111.5,233.4,7.41,363.08Z" />
+          </svg>
+          <p>Copyright © 2025 - All right reserved</p>
+        </aside>
+        <nav class="flex gap-4">
+          <a href="#" aria-label="X (formerly Twitter)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="fill-current">
+              <path d="M13.317 10.774 20.361 3h-1.67l-6.117 6.75L7.806 3H2l7.39 10.534L2 21h1.67l6.457-7.123L16.194 21H22M4.914 4.172h2.176L19.085 19.83h-2.176" />
+            </svg>
+          </a>
+          <a href="#" aria-label="facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="fill-current">
+              <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="fill-current">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.262.82-.577 0-.285-.011-1.04-.016-2.042-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.335-1.757-1.335-1.757-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.604-2.665-.303-5.466-1.335-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.116-3.176 0 0 1.008-.322 3.301 1.23a11.516 11.516 0 0 1 3-.404c1.018.005 2.043.138 3 .404 2.29-1.553 3.296-1.23 3.296-1.23.654 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.805 5.625-5.479 5.921.43.37.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .319.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+    <!-- End of include : footer.html -->
+
+</body>
+</html>
+
