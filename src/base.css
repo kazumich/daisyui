@@ -2,6 +2,14 @@
 @plugin "@tailwindcss/typography";
 @plugin "daisyui";
 
+
+/* Tailwind css dark mode */
+/* @custom-variant dark (&:is(.dark *)); */
+
+/* daisyui dark mode */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+
 @layer components {
   .calendar-link-0 {
     @apply inline-block w-full rounded bg-red-500 text-white hover:bg-red-600 transition-colors;
